@@ -122,7 +122,7 @@ export const HowItWorks: React.FC = () => {
           {/* Right: Big mascot */}
           <div className="hidden lg:flex lg:col-span-3 items-end justify-center">
             <img
-              src="/hamster.jpg"
+              src="/logo.jpg"
               alt="Hamster mascot"
               className="w-full max-w-[220px] object-contain float-anim drop-shadow-2xl"
             />
