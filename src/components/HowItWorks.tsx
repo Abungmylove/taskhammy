@@ -31,7 +31,11 @@ const TAB_CONTENT: Record<Tab, { title: string; desc: string; items: string[]; p
   },
 };
 
-export const HowItWorks: React.FC = () => {
+interface HowItWorksProps {
+  onOpenOrder: (serviceId?: string) => void;
+}
+
+export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenOrder }) => {
   const [activeTab, setActiveTab] = useState<Tab>('tugas');
   const content = TAB_CONTENT[activeTab];
 
@@ -41,6 +45,15 @@ export const HowItWorks: React.FC = () => {
     { key: 'mentoring', label: 'Mentoring' },
     { key: 'spesialist', label: 'Spesialist' },
   ];
+
+  const getServiceIdForTab = (tab: Tab) => {
+    switch (tab) {
+      case 'tugas': return 'makalah';
+      case 'skripsi': return 'bab1';
+      case 'mentoring': return 'skripsi_buddy';
+      default: return 'ppt';
+    }
+  };
 
   return (
     <section id="spesialist" className="bg-brown-section py-20 relative overflow-hidden">
@@ -108,14 +121,12 @@ export const HowItWorks: React.FC = () => {
                   <p className="text-xs text-[#A08070] mb-0.5" style={{fontFamily:'Poppins'}}>Harga Mulai</p>
                   <p className="font-display text-[#9E7256] text-xl">{content.price}</p>
                 </div>
-                <a
-                  href="https://wa.me/6285183144307"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-yellow flex items-center gap-2 text-sm"
+                <button
+                  onClick={() => onOpenOrder(getServiceIdForTab(activeTab))}
+                  className="btn-yellow flex items-center gap-2 text-sm cursor-pointer"
                 >
-                  Pesan Sekarang <ArrowRight className="w-4 h-4" />
-                </a>
+                  Pesan & Hitung Biaya <ArrowRight className="w-4 h-4" />
+                </button>
               </div>
             </div>
           </div>

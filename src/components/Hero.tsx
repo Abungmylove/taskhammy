@@ -1,7 +1,11 @@
 import React from 'react';
 import logoImg from '../assets/logo.jpg';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onOpenOrder: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onOpenOrder }) => {
   return (
     <section className="bg-brown-section min-h-[100dvh] pt-16 relative overflow-hidden flex items-center">
 
@@ -54,19 +58,19 @@ export const Hero: React.FC = () => {
 
             {/* CTA */}
             <div className="flex flex-wrap gap-3 pt-2">
+              <button
+                onClick={onOpenOrder}
+                className="btn-yellow text-base flex items-center gap-2 cursor-pointer"
+              >
+                <span>🛒</span> ORDER & ESTIMASI BIAYA
+              </button>
               <a
                 href="https://wa.me/6285183144307"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-yellow text-base"
+                className="btn-white text-sm border-2 border-white flex items-center gap-2"
               >
-                CHAT SEKARANG
-              </a>
-              <a
-                href="#layanan"
-                className="btn-white text-sm border-2 border-white"
-              >
-                Lihat Layanan →
+                Chat WhatsApp →
               </a>
             </div>
 

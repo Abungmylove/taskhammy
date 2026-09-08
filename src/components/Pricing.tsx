@@ -3,7 +3,11 @@ import { MessageCircle } from 'lucide-react';
 
 type PricingTab = 'tugas' | 'skripsi' | 'mentoring';
 
-export const Pricing: React.FC = () => {
+interface PricingProps {
+  onOpenOrder: (serviceId?: string) => void;
+}
+
+export const Pricing: React.FC<PricingProps> = ({ onOpenOrder }) => {
   const [activeTab, setActiveTab] = useState<PricingTab>('tugas');
 
   const tabs: { key: PricingTab; label: string; emoji: string }[] = [
@@ -97,15 +101,26 @@ export const Pricing: React.FC = () => {
             ))}
           </div>
           <div className="px-6 py-5 bg-[#FAF0E6] border-t border-[#E8D5C0] flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="font-bold text-[#3D2B1F] text-sm" style={{fontFamily:'Nunito'}}>🐹 Harga fleksibel, bisa nego!</p>
-            <a
-              href="https://wa.me/6285183144307"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-yellow flex items-center gap-2 text-sm"
-            >
-              <MessageCircle className="w-4 h-4" /> CHAT & NEGO
-            </a>
+            <div>
+              <p className="font-bold text-[#3D2B1F] text-sm" style={{fontFamily:'Nunito'}}>🐹 Mau pesan atau hitung simulasi biaya?</p>
+              <p className="text-[#6B4E3D] text-xs">Pilih langsung di form kalkulator kami!</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => onOpenOrder(activeTab === 'skripsi' ? 'bab1' : activeTab === 'mentoring' ? 'skripsi_buddy' : 'ppt')}
+                className="btn-yellow flex items-center gap-2 text-sm cursor-pointer"
+              >
+                <span>🛒</span> ORDER SEKARANG
+              </button>
+              <a
+                href="https://wa.me/6285183144307"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-white text-sm border border-[#E8D5C0] flex items-center gap-1.5"
+              >
+                <MessageCircle className="w-4 h-4" /> CHAT WA
+              </a>
+            </div>
           </div>
         </div>
 

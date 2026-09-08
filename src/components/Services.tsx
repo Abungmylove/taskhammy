@@ -29,7 +29,11 @@ const SERVICES = [
   },
 ];
 
-export const Services: React.FC = () => {
+interface ServicesProps {
+  onOpenOrder: (serviceId?: string) => void;
+}
+
+export const Services: React.FC<ServicesProps> = ({ onOpenOrder }) => {
   return (
     <section id="layanan" className="py-20 bg-[#FFF9F3] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,7 +53,7 @@ export const Services: React.FC = () => {
           {SERVICES.map((svc, i) => (
             <div
               key={i}
-              className="relative rounded-3xl p-6 border-2 hover:-translate-y-2 transition-transform duration-200 card-cute group"
+              className="relative rounded-3xl p-6 border-2 hover:-translate-y-2 transition-transform duration-200 card-cute group flex flex-col"
               style={{ backgroundColor: svc.color, borderColor: svc.border }}
             >
               {/* Gift decoration for mentoring */}
@@ -70,28 +74,33 @@ export const Services: React.FC = () => {
               </p>
 
               {/* Price + CTA row */}
-              <div className="flex items-center justify-between mt-auto">
+              <div className="flex items-center justify-between mt-auto pt-3 border-t border-[#E8D5C0]">
                 <span className="font-bold text-[#9E7256] text-sm" style={{fontFamily:'Nunito'}}>
                   {svc.price}
                 </span>
-                <a
-                  href="https://wa.me/6285183144307"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-[#9E7256] flex items-center justify-center text-white hover:bg-[#7A5540] transition-colors shadow-md"
+                <button
+                  onClick={() => onOpenOrder(i === 0 ? 'ppt' : i === 1 ? 'bab1' : 'skripsi_buddy')}
+                  className="px-3.5 py-1.5 rounded-full bg-[#9E7256] flex items-center gap-1 text-white hover:bg-[#7A5540] transition-colors shadow-md text-xs font-bold cursor-pointer"
+                  style={{ fontFamily: 'Nunito' }}
                 >
-                  <Plus className="w-5 h-5" />
-                </a>
+                  <Plus className="w-3.5 h-3.5" /> Order
+                </button>
               </div>
             </div>
           ))}
         </div>
 
         {/* All services detail link */}
-        <div className="mt-10 text-center">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <button
+            onClick={() => onOpenOrder()}
+            className="btn-yellow text-sm flex items-center gap-2 cursor-pointer"
+          >
+            <span>🛒</span> BUKA KALKULATOR & ORDER
+          </button>
           <a
             href="#harga"
-            className="inline-flex items-center gap-2 btn-yellow text-sm"
+            className="btn-white text-sm border border-[#E8D5C0]"
           >
             LIHAT SEMUA HARGA →
           </a>

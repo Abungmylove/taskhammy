@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import logoImg from '../assets/logo.jpg';
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  onOpenOrder: () => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ onOpenOrder }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -20,7 +24,7 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-lg' : ''} bg-[#9E7256]`}>
+    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled ? 'shadow-lg' : ''} bg-[#9E7256]`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -44,12 +48,18 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* CTA */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-2.5">
+            <button
+              onClick={onOpenOrder}
+              className="btn-yellow text-sm font-bold px-4 py-2 flex items-center gap-1.5 cursor-pointer"
+            >
+              <span>🛒</span> ORDER TUGAS
+            </button>
             <a
               href="https://wa.me/6285183144307"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-yellow text-sm font-bold px-5 py-2"
+              className="btn-white text-sm font-bold px-4 py-2"
             >
               CHAT WA
             </a>
@@ -80,13 +90,22 @@ export const Navbar: React.FC = () => {
               {link.label}
             </a>
           ))}
+          <button
+            onClick={() => {
+              setMobileOpen(false);
+              onOpenOrder();
+            }}
+            className="btn-yellow block w-full text-center text-sm font-bold mt-2 cursor-pointer"
+          >
+            🛒 ORDER & HITUNG ESTIMASI
+          </button>
           <a
             href="https://wa.me/6285183144307"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-yellow block text-center text-sm font-bold mt-2"
+            className="btn-white block text-center text-sm font-bold mt-2"
           >
-            CHAT WA SEKARANG
+            CHAT WA LANGSUNG
           </a>
         </div>
       )}

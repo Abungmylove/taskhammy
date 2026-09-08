@@ -1,8 +1,11 @@
 import React from 'react';
 import logoImg from '../assets/logo.jpg';
 
-// "7 Days Free Trial" style section — White card on pink background
-export const FreeTrialBanner: React.FC = () => {
+interface FreeTrialBannerProps {
+  onOpenOrder: () => void;
+}
+
+export const FreeTrialBanner: React.FC<FreeTrialBannerProps> = ({ onOpenOrder }) => {
   return (
     <section className="bg-[#9E7256] py-16 relative overflow-hidden">
       {/* Decorative dots */}
@@ -32,14 +35,12 @@ export const FreeTrialBanner: React.FC = () => {
             <p className="text-[#6B4E3D] text-sm" style={{fontFamily:'Poppins'}}>
               Ceritakan kebutuhan tugasmu dan dapatkan estimasi harga tanpa dipungut biaya apapun. Fast response!
             </p>
-            <a
-              href="https://wa.me/6285183144307"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-yellow inline-block text-sm mt-2"
+            <button
+              onClick={onOpenOrder}
+              className="btn-yellow inline-block text-sm mt-2 cursor-pointer"
             >
-              MULAI SEKARANG
-            </a>
+              HITUNG ESTIMASI & ORDER
+            </button>
           </div>
 
           {/* Right: quick benefit list */}

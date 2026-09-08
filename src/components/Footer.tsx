@@ -2,7 +2,11 @@ import React from 'react';
 import { MessageCircle, Heart } from 'lucide-react';
 import logoImg from '../assets/logo.jpg';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenOrder: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenOrder }) => {
   return (
     <footer className="bg-[#3D2B1F] text-white pt-16 pb-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,15 +20,23 @@ export const Footer: React.FC = () => {
               <p className="text-[#C4A882] text-xs mt-1" style={{fontFamily:'Poppins'}}>Subscribe untuk tips & info promo terbaru 🐹</p>
             </div>
           </div>
-          <a
-            href="https://wa.me/6285183144307"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-yellow flex items-center gap-2"
-          >
-            <MessageCircle className="w-4 h-4" />
-            CHAT WA
-          </a>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={onOpenOrder}
+              className="btn-yellow flex items-center gap-2 cursor-pointer"
+            >
+              <span>🛒</span> ORDER TUGAS
+            </button>
+            <a
+              href="https://wa.me/6285183144307"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-white flex items-center gap-2"
+            >
+              <MessageCircle className="w-4 h-4" />
+              CHAT WA
+            </a>
+          </div>
         </div>
 
         {/* Nav Links — like reference */}
