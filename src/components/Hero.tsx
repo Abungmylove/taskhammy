@@ -3,7 +3,7 @@ import logoImg from '../assets/logo.jpg';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="bg-pink-section min-h-[100dvh] pt-16 relative overflow-hidden flex items-center">
+    <section className="bg-brown-section min-h-[100dvh] pt-16 relative overflow-hidden flex items-center">
 
       {/* ---- Decorative floating shapes ---- */}
       {/* Top-right cloud */}
@@ -83,7 +83,7 @@ export const Hero: React.FC = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               {/* Glowing circle behind mascot */}
-              <div className="absolute inset-0 rounded-full bg-[#FF6FB7]/20 blur-3xl scale-110" />
+              <div className="absolute inset-0 rounded-full bg-[#C4A882]/30 blur-3xl scale-110" />
               <img
                 src={logoImg}
                 alt="Taskhammy Mascot"
@@ -92,11 +92,11 @@ export const Hero: React.FC = () => {
               />
               {/* Floating badge on mascot */}
               <div className="absolute top-8 -left-4 bg-white rounded-2xl px-3 py-2 card-cute bounce-gentle z-20" style={{animationDelay:'0.3s'}}>
-                <p className="font-display text-[#E91E8C] text-sm">⭐ 4.9/5</p>
+                <p className="font-display text-[#9E7256] text-sm">⭐ 4.9/5</p>
                 <p className="text-[10px] text-gray-500 font-heading">100+ Tugas Selesai</p>
               </div>
-              <div className="absolute bottom-12 -right-4 bg-[#FFD700] rounded-2xl px-3 py-2 card-cute bounce-gentle z-20" style={{animationDelay:'0.8s'}}>
-                <p className="font-display text-[#1A1A2E] text-xs">🐹 Fast Response!</p>
+              <div className="absolute bottom-12 -right-4 bg-[#F5A623] rounded-2xl px-3 py-2 card-cute bounce-gentle z-20" style={{animationDelay:'0.8s'}}>
+                <p className="font-display text-[#3D2B1F] text-xs">🐹 Fast Response!</p>
               </div>
             </div>
           </div>

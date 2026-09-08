@@ -43,7 +43,7 @@ export const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <section id="spesialist" className="bg-pink-section py-20 relative overflow-hidden">
+    <section id="spesialist" className="bg-brown-section py-20 relative overflow-hidden">
       {/* Decorative shapes */}
       <div className="absolute top-8 left-8 text-white/20 text-5xl select-none bounce-gentle">◆</div>
       <div className="absolute bottom-12 left-1/4 text-white/10 text-6xl select-none spin-slow">✦</div>
@@ -70,7 +70,7 @@ export const HowItWorks: React.FC = () => {
                 onClick={() => setActiveTab(tab.key)}
                 className={`px-5 py-3 rounded-2xl font-bold text-sm text-left transition-all ${
                   activeTab === tab.key
-                    ? 'bg-[#FFD700] text-[#1A1A2E] shadow-lg scale-105'
+                    ? 'bg-[#F5A623] text-[#3D2B1F] shadow-lg scale-105'
                     : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
                 }`}
                 style={{fontFamily:'Nunito'}}
@@ -82,31 +82,31 @@ export const HowItWorks: React.FC = () => {
 
           {/* Center: Content Card */}
           <div className="lg:col-span-6">
-            <div className="bg-white rounded-3xl p-6 sm:p-8 card-cute">
-              <div className="inline-flex items-center gap-1 bg-[#FDF0F8] text-[#E91E8C] rounded-full px-3 py-1 text-xs font-bold mb-4" style={{fontFamily:'Nunito'}}>
+            <div className="bg-[#FFF9F3] border border-[#E8D5C0] rounded-3xl p-6 sm:p-8 card-cute">
+              <div className="inline-flex items-center gap-1 bg-[#FAF0E6] text-[#9E7256] border border-[#E8D5C0] rounded-full px-3 py-1 text-xs font-bold mb-4" style={{fontFamily:'Nunito'}}>
                 ⭐⭐ TERPERCAYA
               </div>
 
-              <h3 className="font-display text-[#1A1A2E] text-2xl sm:text-3xl mb-3 leading-tight">
+              <h3 className="font-display text-[#3D2B1F] text-2xl sm:text-3xl mb-3 leading-tight">
                 {content.title}
               </h3>
-              <p className="text-gray-500 text-sm mb-5 leading-relaxed" style={{fontFamily:'Poppins'}}>
+              <p className="text-[#6B4E3D] text-sm mb-5 leading-relaxed" style={{fontFamily:'Poppins'}}>
                 {content.desc}
               </p>
 
               <ul className="space-y-2.5 mb-6">
                 {content.items.map((item, i) => (
                   <li key={i} className="flex items-center gap-2.5 text-sm" style={{fontFamily:'Nunito'}}>
-                    <span className="w-5 h-5 rounded-full bg-[#E91E8C] flex items-center justify-center text-white text-xs flex-shrink-0">✓</span>
-                    <span className="font-semibold text-[#1A1A2E]">{item}</span>
+                    <span className="w-5 h-5 rounded-full bg-[#9E7256] flex items-center justify-center text-white text-xs flex-shrink-0">✓</span>
+                    <span className="font-semibold text-[#3D2B1F]">{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+              <div className="flex items-center justify-between pt-4 border-t border-[#E8D5C0]">
                 <div>
-                  <p className="text-xs text-gray-400 mb-0.5" style={{fontFamily:'Poppins'}}>Harga Mulai</p>
-                  <p className="font-display text-[#E91E8C] text-xl">{content.price}</p>
+                  <p className="text-xs text-[#A08070] mb-0.5" style={{fontFamily:'Poppins'}}>Harga Mulai</p>
+                  <p className="font-display text-[#9E7256] text-xl">{content.price}</p>
                 </div>
                 <a
                   href="https://wa.me/6285183144307"

@@ -20,7 +20,7 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-lg' : ''} bg-[#E91E8C]`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-lg' : ''} bg-[#9E7256]`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -68,7 +68,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="md:hidden bg-[#C4167A] px-4 py-4 space-y-3 border-t border-white/20">
+        <div className="md:hidden bg-[#7A5540] px-4 py-4 space-y-3 border-t border-white/20">
           {links.map(link => (
             <a
               key={link.href}

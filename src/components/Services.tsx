@@ -7,39 +7,39 @@ const SERVICES = [
     title: 'TUGAS\nUMUM',
     desc: 'PPT, makalah, laporan, parafrase, jawab soal, terjemahan & lebih banyak lagi!',
     price: 'Mulai Rp 2.000',
-    color: '#FDF0F8',
-    border: '#F2A191',
+    color: '#FAF0E6',
+    border: '#E8D5C0',
   },
   {
     emoji: '🎓',
     title: 'SKRIPSI\nLENGKAP',
     desc: 'Dari judul, abstrak, hingga Bab 1–5. Spesialis sains & kesehatan.',
     price: 'Mulai Rp 50.000',
-    color: '#FDF0F8',
-    border: '#F2A191',
+    color: '#FAF0E6',
+    border: '#E8D5C0',
   },
   {
     emoji: '🔬',
     title: 'MENTORING\n& KONSULTASI',
     desc: 'Skripsi Buddy, ambil data bioinformatika, drug discovery & phylogenetic tree.',
     price: 'Mulai Rp 100.000/sesi',
-    color: '#FDF0F8',
-    border: '#F2A191',
+    color: '#FAF0E6',
+    border: '#E8D5C0',
     hasGift: true,
   },
 ];
 
 export const Services: React.FC = () => {
   return (
-    <section id="layanan" className="py-20 bg-white relative">
+    <section id="layanan" className="py-20 bg-[#FFF9F3] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
         <div className="mb-12">
-          <p className="text-[#E91E8C] text-sm font-bold uppercase tracking-widest mb-2" style={{fontFamily:'Nunito'}}>
+          <p className="text-[#9E7256] text-sm font-bold uppercase tracking-widest mb-2" style={{fontFamily:'Nunito'}}>
             ✦ APA YANG KAMI TAWARKAN
           </p>
-          <h2 className="font-display text-[#1A1A2E]" style={{fontSize:'clamp(2rem,5vw,3.5rem)'}}>
+          <h2 className="font-display text-[#3D2B1F]" style={{fontSize:'clamp(2rem,5vw,3.5rem)'}}>
             LAYANAN<br />TASKHAMMY 🐹
           </h2>
         </div>
@@ -58,27 +58,27 @@ export const Services: React.FC = () => {
               )}
 
               {/* Icon box */}
-              <div className="w-14 h-14 rounded-2xl bg-[#E91E8C]/10 flex items-center justify-center text-3xl mb-4">
+              <div className="w-14 h-14 rounded-2xl bg-[#9E7256]/15 flex items-center justify-center text-3xl mb-4">
                 {svc.emoji}
               </div>
 
-              <h3 className="font-display text-[#1A1A2E] text-xl mb-2 whitespace-pre-line leading-tight">
+              <h3 className="font-display text-[#3D2B1F] text-xl mb-2 whitespace-pre-line leading-tight">
                 {svc.title}
               </h3>
-              <p className="text-gray-500 text-sm mb-5 leading-relaxed" style={{fontFamily:'Poppins'}}>
+              <p className="text-[#6B4E3D] text-sm mb-5 leading-relaxed" style={{fontFamily:'Poppins'}}>
                 {svc.desc}
               </p>
 
               {/* Price + CTA row */}
               <div className="flex items-center justify-between mt-auto">
-                <span className="font-bold text-[#E91E8C] text-sm" style={{fontFamily:'Nunito'}}>
+                <span className="font-bold text-[#9E7256] text-sm" style={{fontFamily:'Nunito'}}>
                   {svc.price}
                 </span>
                 <a
                   href="https://wa.me/6285183144307"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-[#E91E8C] flex items-center justify-center text-white hover:bg-[#C4167A] transition-colors shadow-md"
+                  className="w-9 h-9 rounded-full bg-[#9E7256] flex items-center justify-center text-white hover:bg-[#7A5540] transition-colors shadow-md"
                 >
                   <Plus className="w-5 h-5" />
                 </a>

@@ -48,15 +48,15 @@ export const Pricing: React.FC = () => {
   };
 
   return (
-    <section id="harga" className="py-20 bg-[#FDF0F8]">
+    <section id="harga" className="py-20 bg-[#FAF0E6]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-10">
-          <p className="text-[#E91E8C] text-sm font-bold uppercase tracking-widest mb-2" style={{fontFamily:'Nunito'}}>💰 TRANSPARAN & TERJANGKAU</p>
-          <h2 className="font-display text-[#1A1A2E]" style={{fontSize:'clamp(2rem,5vw,3rem)'}}>
+          <p className="text-[#9E7256] text-sm font-bold uppercase tracking-widest mb-2" style={{fontFamily:'Nunito'}}>💰 TRANSPARAN & TERJANGKAU</p>
+          <h2 className="font-display text-[#3D2B1F]" style={{fontSize:'clamp(2rem,5vw,3rem)'}}>
             DAFTAR HARGA 🐹
           </h2>
-          <p className="mt-3 text-gray-500 text-sm" style={{fontFamily:'Poppins'}}>
+          <p className="mt-3 text-[#6B4E3D] text-sm" style={{fontFamily:'Poppins'}}>
             Harga di bawah adalah harga mulai. Semua bisa negosiasi!
           </p>
         </div>
@@ -69,8 +69,8 @@ export const Pricing: React.FC = () => {
               onClick={() => setActiveTab(tab.key)}
               className={`px-5 py-2.5 rounded-full font-bold text-sm transition-all flex items-center gap-2 ${
                 activeTab === tab.key
-                  ? 'bg-[#E91E8C] text-white shadow-md'
-                  : 'bg-white text-[#1A1A2E] border-2 border-[#F2A191]/50 hover:border-[#E91E8C]'
+                  ? 'bg-[#9E7256] text-white shadow-md'
+                  : 'bg-white text-[#3D2B1F] border-2 border-[#E8D5C0] hover:border-[#9E7256]'
               }`}
               style={{fontFamily:'Nunito'}}
             >
@@ -80,24 +80,24 @@ export const Pricing: React.FC = () => {
         </div>
 
         {/* Price Table */}
-        <div className="bg-white rounded-3xl border-2 border-[#F2A191]/40 card-cute overflow-hidden">
-          <div className="px-6 py-4 bg-[#E91E8C] flex justify-between">
+        <div className="bg-[#FFF9F3] rounded-3xl border-2 border-[#E8D5C0] card-cute overflow-hidden">
+          <div className="px-6 py-4 bg-[#9E7256] flex justify-between">
             <span className="font-display text-white text-sm">LAYANAN</span>
             <span className="font-display text-white text-sm">HARGA MULAI</span>
           </div>
-          <div className="divide-y divide-[#FDF0F8]">
+          <div className="divide-y divide-[#E8D5C0]/60">
             {priceData[activeTab].map((item, i) => (
-              <div key={i} className="px-6 py-4 flex items-center justify-between gap-4 hover:bg-[#FDF0F8] transition-colors">
+              <div key={i} className="px-6 py-4 flex items-center justify-between gap-4 hover:bg-[#FAF0E6] transition-colors">
                 <div>
-                  <p className="font-bold text-[#1A1A2E] text-sm" style={{fontFamily:'Nunito'}}>{item.name}</p>
-                  {item.note && <p className="text-[11px] text-gray-400">{item.note}</p>}
+                  <p className="font-bold text-[#3D2B1F] text-sm" style={{fontFamily:'Nunito'}}>{item.name}</p>
+                  {item.note && <p className="text-[11px] text-[#A08070]">{item.note}</p>}
                 </div>
-                <span className="font-display text-[#E91E8C] text-sm whitespace-nowrap">{item.price}</span>
+                <span className="font-display text-[#9E7256] text-sm whitespace-nowrap">{item.price}</span>
               </div>
             ))}
           </div>
-          <div className="px-6 py-5 bg-[#FDF0F8] border-t border-[#F2A191]/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="font-bold text-[#1A1A2E] text-sm" style={{fontFamily:'Nunito'}}>🐹 Harga fleksibel, bisa nego!</p>
+          <div className="px-6 py-5 bg-[#FAF0E6] border-t border-[#E8D5C0] flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="font-bold text-[#3D2B1F] text-sm" style={{fontFamily:'Nunito'}}>🐹 Harga fleksibel, bisa nego!</p>
             <a
               href="https://wa.me/6285183144307"
               target="_blank"
