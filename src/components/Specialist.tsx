@@ -94,3 +94,4 @@ export const Specialist: React.FC = () => {
     </section>
   );
 };
+

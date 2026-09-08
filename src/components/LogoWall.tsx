@@ -39,3 +39,4 @@ export const LogoWall: React.FC = () => {
     </section>
   );
 };
+

@@ -14,7 +14,7 @@ export const FreeTrialBanner: React.FC = () => {
           {/* Mascot inside card - left */}
           <div className="flex-shrink-0">
             <img
-              src="/logo.jpg"
+              src={import.meta.env.BASE_URL + "logo.jpg"}
               alt="Hamster"
               className="w-36 sm:w-48 h-auto object-contain float-anim drop-shadow-lg"
             />
@@ -63,3 +63,4 @@ export const FreeTrialBanner: React.FC = () => {
     </section>
   );
 };
+
