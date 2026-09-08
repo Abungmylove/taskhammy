@@ -21,14 +21,10 @@ export const Pricing: React.FC = () => {
       { name: 'Makalah / Laporan / Artikel', price: 'Rp 20.000/page' },
       { name: 'Review / Resume / Esai', price: 'Rp 20.000/page' },
       { name: 'Jawab Soal', price: 'Rp 10.000/page' },
-      { name: 'Ketik', price: 'Rp 10.000/page' },
-      { name: 'Nulis', price: 'Rp 10.000/page' },
+      { name: 'Ketik & Nulis', price: 'Rp 10.000/page' },
       { name: 'Layouting', price: 'Rp 10.000/page' },
-      { name: 'Biorander', price: 'Rp 15.000/image' },
-      { name: 'Poster', price: 'Rp 15.000/image' },
-      { name: 'Infografis', price: 'Rp 15.000/image' },
-      { name: 'Terjemahan Inggris-Indonesia', price: 'Rp 20.000/page' },
-      { name: 'Terjemahan Indonesia-Inggris', price: 'Rp 20.000/page' },
+      { name: 'Biorander / Poster / Infografis', price: 'Rp 15.000/image' },
+      { name: 'Terjemahan (Inggris ↔ Indonesia)', price: 'Rp 20.000/page' },
     ],
     skripsi: [
       { name: 'Judul & Research Plan', price: 'Rp 100.000' },
@@ -39,13 +35,12 @@ export const Pricing: React.FC = () => {
       { name: 'Bab 4 Hasil & Pembahasan', price: 'Rp 500.000' },
       { name: 'Bab 5 Simpulan & Saran', price: 'Rp 500.000' },
       { name: 'Formatting', price: 'Rp 30.000' },
-      { name: 'Daftar Isi', price: 'Rp 30.000' },
-      { name: 'Daftar Pustaka Mendeley', price: 'Rp 30.000' },
+      { name: 'Daftar Isi & Mendeley', price: 'Rp 30.000' },
       { name: 'PPT Sidang', price: 'Rp 150.000' },
       { name: 'Naskah Presentasi Sidang', price: 'Rp 100.000' },
     ],
     mentoring: [
-      { name: 'Skripsi Buddy (per sesi)', price: 'Mulai Rp 100.000/meet', note: 'Bimbingan Bab 1 s/d 5' },
+      { name: 'Skripsi Buddy (per sesi)', price: 'Mulai Rp 100.000', note: 'Bimbingan Bab 1–5' },
       { name: 'Drug Discovery', price: 'Hubungi Kami', note: 'Bioinformatika' },
       { name: 'Phylogenetic Tree', price: 'Hubungi Kami', note: 'Bioinformatika' },
       { name: 'Analisis Mutasi Gen & SNPs', price: 'Hubungi Kami', note: 'Bioinformatika' },
@@ -53,86 +48,63 @@ export const Pricing: React.FC = () => {
   };
 
   return (
-    <section id="harga" className="py-24 bg-[#FAF0E6] relative">
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#C4A882]/40 to-transparent" />
+    <section id="harga" className="py-20 bg-[#FDF0F8]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FAD4CB] border border-[#F2A191]/30 text-[#7A5540] text-sm font-bold mb-4" style={{ fontFamily: 'Nunito' }}>
-            💰 Transparansi Harga
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#3D2B1F]" style={{ fontFamily: 'Nunito' }}>
-            Daftar Harga Taskhammy 🐹
+        <div className="text-center mb-10">
+          <p className="text-[#E91E8C] text-sm font-bold uppercase tracking-widest mb-2" style={{fontFamily:'Nunito'}}>💰 TRANSPARAN & TERJANGKAU</p>
+          <h2 className="font-display text-[#1A1A2E]" style={{fontSize:'clamp(2rem,5vw,3rem)'}}>
+            DAFTAR HARGA 🐹
           </h2>
-          <p className="mt-4 text-[#6B4E3D] text-base max-w-xl mx-auto" style={{ fontFamily: 'Poppins' }}>
-            Semua harga di bawah adalah harga mulai. Bisa negosiasi sesuai kebutuhan dan budget kamu!
+          <p className="mt-3 text-gray-500 text-sm" style={{fontFamily:'Poppins'}}>
+            Harga di bawah adalah harga mulai. Semua bisa negosiasi!
           </p>
         </div>
 
-        {/* Tab Buttons */}
-        <div className="flex items-center justify-center gap-2 mb-8 flex-wrap">
-          {tabs.map((tab) => (
+        {/* Tab */}
+        <div className="flex items-center justify-center gap-2 mb-6 flex-wrap">
+          {tabs.map(tab => (
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
               className={`px-5 py-2.5 rounded-full font-bold text-sm transition-all flex items-center gap-2 ${
                 activeTab === tab.key
-                  ? 'bg-[#9E7256] text-white shadow-md scale-105'
-                  : 'bg-white text-[#6B4E3D] border-2 border-[#E8D5C0] hover:border-[#C4A882]'
+                  ? 'bg-[#E91E8C] text-white shadow-md'
+                  : 'bg-white text-[#1A1A2E] border-2 border-[#F2A191]/50 hover:border-[#E91E8C]'
               }`}
-              style={{ fontFamily: 'Nunito' }}
+              style={{fontFamily:'Nunito'}}
             >
               {tab.emoji} {tab.label}
             </button>
           ))}
         </div>
 
-        {/* Price Table Card */}
-        <div className="bg-white rounded-3xl border-2 border-[#E8D5C0] card-shadow overflow-hidden">
-          {/* Table Header */}
-          <div className="px-6 py-4 bg-[#FAD4CB]/50 border-b border-[#E8D5C0] flex justify-between items-center">
-            <span className="font-black text-[#3D2B1F] text-sm" style={{ fontFamily: 'Nunito' }}>Layanan</span>
-            <span className="font-black text-[#3D2B1F] text-sm" style={{ fontFamily: 'Nunito' }}>Harga Mulai</span>
+        {/* Price Table */}
+        <div className="bg-white rounded-3xl border-2 border-[#F2A191]/40 card-cute overflow-hidden">
+          <div className="px-6 py-4 bg-[#E91E8C] flex justify-between">
+            <span className="font-display text-white text-sm">LAYANAN</span>
+            <span className="font-display text-white text-sm">HARGA MULAI</span>
           </div>
-
-          {/* Table Rows */}
-          <div className="divide-y divide-[#F5E8D8]">
+          <div className="divide-y divide-[#FDF0F8]">
             {priceData[activeTab].map((item, i) => (
-              <div key={i} className="px-6 py-4 flex items-center justify-between gap-4 hover:bg-[#FDF6EE] transition-colors">
+              <div key={i} className="px-6 py-4 flex items-center justify-between gap-4 hover:bg-[#FDF0F8] transition-colors">
                 <div>
-                  <p className="font-semibold text-[#3D2B1F] text-sm" style={{ fontFamily: 'Nunito' }}>{item.name}</p>
-                  {item.note && (
-                    <p className="text-[11px] text-[#A08070] mt-0.5" style={{ fontFamily: 'Poppins' }}>{item.note}</p>
-                  )}
+                  <p className="font-bold text-[#1A1A2E] text-sm" style={{fontFamily:'Nunito'}}>{item.name}</p>
+                  {item.note && <p className="text-[11px] text-gray-400">{item.note}</p>}
                 </div>
-                <span className="font-black text-[#9E7256] text-sm whitespace-nowrap" style={{ fontFamily: 'Nunito' }}>
-                  {item.price}
-                </span>
+                <span className="font-display text-[#E91E8C] text-sm whitespace-nowrap">{item.price}</span>
               </div>
             ))}
           </div>
-
-          {/* Table Footer */}
-          <div className="px-6 py-5 bg-[#FAD4CB]/30 border-t border-[#E8D5C0] flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>
-              <p className="font-black text-[#3D2B1F] text-sm" style={{ fontFamily: 'Nunito' }}>
-                🐹 Harga fleksibel, bisa nego!
-              </p>
-              <p className="text-[#6B4E3D] text-xs" style={{ fontFamily: 'Poppins' }}>
-                Hubungi kami langsung untuk diskusi harga spesial.
-              </p>
-            </div>
+          <div className="px-6 py-5 bg-[#FDF0F8] border-t border-[#F2A191]/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="font-bold text-[#1A1A2E] text-sm" style={{fontFamily:'Nunito'}}>🐹 Harga fleksibel, bisa nego!</p>
             <a
               href="https://wa.me/6285183144307"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-[#9E7256] hover:bg-[#7A5540] text-white font-black rounded-full text-sm flex items-center gap-2 whitespace-nowrap transition-all hover:-translate-y-0.5 hover:shadow-md"
-              style={{ fontFamily: 'Nunito' }}
+              className="btn-yellow flex items-center gap-2 text-sm"
             >
-              <MessageCircle className="w-4 h-4" />
-              Chat & Nego Sekarang
+              <MessageCircle className="w-4 h-4" /> CHAT & NEGO
             </a>
           </div>
         </div>
