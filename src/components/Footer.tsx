@@ -1,5 +1,6 @@
 import React from 'react';
 import { MessageCircle, Heart } from 'lucide-react';
+import logoImg from '../assets/logo.jpg';
 
 export const Footer: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ export const Footer: React.FC = () => {
         {/* Stay in the Game strip — like reference */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pb-10 border-b border-white/10 mb-10">
           <div className="flex items-center gap-4">
-            <img src={import.meta.env.BASE_URL + "logo.jpg"} alt="Hamster" className="w-16 h-16 rounded-full object-cover border-2 border-[#E91E8C]" />
+            <img src={logoImg} alt="Hamster" className="w-16 h-16 rounded-full object-cover border-2 border-[#E91E8C]" />
             <div>
               <h3 className="font-display text-2xl text-white">STAY ON TOP OF<br />YOUR TASKS!</h3>
               <p className="text-white/50 text-xs mt-1" style={{fontFamily:'Poppins'}}>Subscribe untuk tips & info promo terbaru 🐹</p>

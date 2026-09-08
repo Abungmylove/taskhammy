@@ -1,4 +1,5 @@
 import React from 'react';
+import logoImg from '../assets/logo.jpg';
 
 export const Hero: React.FC = () => {
   return (
@@ -84,9 +85,9 @@ export const Hero: React.FC = () => {
               {/* Glowing circle behind mascot */}
               <div className="absolute inset-0 rounded-full bg-[#FF6FB7]/20 blur-3xl scale-110" />
               <img
-                src={import.meta.env.BASE_URL + "logo.jpg"}
+                src={logoImg}
                 alt="Taskhammy Mascot"
-                className="relative z-10 float-anim drop-shadow-2xl"
+                className="relative z-10 float-anim drop-shadow-2xl rounded-3xl"
                 style={{ width: 'clamp(260px, 40vw, 420px)', height: 'auto', objectFit: 'contain' }}
               />
               {/* Floating badge on mascot */}
