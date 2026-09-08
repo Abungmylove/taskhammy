@@ -46,10 +46,7 @@ const SERVICE_OPTIONS: ServiceOption[] = [
 ];
 
 const PAYMENT_METHODS = [
-  { id: 'qris', name: 'QRIS (All E-Wallet & Bank)', icon: '📱', badge: 'Instan' },
-  { id: 'gopay_dana', name: 'GoPay / DANA / ShopeePay', icon: '👛', badge: 'Populer' },
-  { id: 'bca', name: 'Bank BCA', icon: '🏦', badge: 'Transfer' },
-  { id: 'mandiri_bri', name: 'Bank Mandiri / BRI / BNI', icon: '💳', badge: 'Transfer' },
+  { id: 'qris', name: 'QRIS (Semua Bank & E-Wallet: GoPay, OVO, DANA, BCA, Mandiri, dll)', icon: '📱', badge: 'Hanya QRIS' },
 ];
 
 export const OrderModal: React.FC<OrderModalProps> = ({ isOpen, onClose, defaultService }) => {
@@ -229,36 +226,31 @@ Mohon info ketersediaan slot & penawaran terbaiknya ya kak! Terima kasih 🌸✨
             />
           </div>
 
-          {/* Step 3: Pilihan Payment Method Ala-ala */}
+          {/* Step 3: Pilihan Payment Method (Hanya QRIS) */}
           <div>
             <label className="block text-xs font-bold text-[#3D2B1F] mb-2" style={{ fontFamily: 'Nunito' }}>
-              PILIH METODE PEMBAYARAN (SIMULASI):
+              METODE PEMBAYARAN (ONLY QRIS):
             </label>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {PAYMENT_METHODS.map((pm) => (
-                <div
-                  key={pm.id}
-                  onClick={() => setSelectedPayment(pm.id)}
-                  className={`cursor-pointer p-3 rounded-2xl border-2 flex items-center justify-between transition-all ${
-                    selectedPayment === pm.id
-                      ? 'bg-[#FAF0E6] border-[#9E7256] text-[#3D2B1F] shadow-sm'
-                      : 'bg-white border-[#E8D5C0] text-gray-600 hover:border-[#C4A882]'
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <span className="text-xl">{pm.icon}</span>
-                    <span className="text-xs font-bold" style={{ fontFamily: 'Nunito' }}>
-                      {pm.name}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <span className="text-[10px] font-bold bg-[#E8D5C0] text-[#7A5540] px-2 py-0.5 rounded-full">
-                      {pm.badge}
-                    </span>
-                    {selectedPayment === pm.id && <CheckCircle2 className="w-4 h-4 text-[#9E7256]" />}
-                  </div>
+            <div className="p-4 rounded-2xl border-2 border-[#9E7256] bg-[#FAF0E6] flex items-center justify-between shadow-sm">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white border border-[#E8D5C0] flex items-center justify-center text-2xl shadow-xs">
+                  📱
                 </div>
-              ))}
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-black text-[#3D2B1F]" style={{ fontFamily: 'Nunito' }}>
+                      QRIS — Pembayaran Instan
+                    </span>
+                    <span className="text-[10px] font-bold bg-[#9E7256] text-white px-2 py-0.5 rounded-full">
+                      Hanya QRIS
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#6B4E3D] mt-0.5" style={{ fontFamily: 'Poppins' }}>
+                    Mendukung semua aplikasi e-wallet (GoPay, OVO, DANA, ShopeePay) & m-Banking (BCA, Mandiri, BRI, BNI, dll).
+                  </p>
+                </div>
+              </div>
+              <CheckCircle2 className="w-5 h-5 text-[#9E7256] flex-shrink-0 ml-2" />
             </div>
           </div>
 
